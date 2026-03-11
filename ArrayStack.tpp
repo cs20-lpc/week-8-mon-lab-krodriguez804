@@ -29,7 +29,9 @@ template <typename T>
 void ArrayStack<T>::clear() {
     // TODO remove all elements in the stack, resetting to the initial state
     delete[] buffer;
+    buffer = nullptr;
     this->length = 0;
+    maxSize = 0;
 }
 
 template <typename T>
@@ -124,7 +126,6 @@ void ArrayStack<T>::rotate(typename Stack<T>::Direction dir) {
 
         buffer[0] = temp;
     }
-
     else {
         throw string("Invalid direction");
     }
