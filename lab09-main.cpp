@@ -1,6 +1,7 @@
 // Krystle Dao Week 8 Monday Lab
 
 #include <iostream>
+#include <string>
 #include "ArrayStack.hpp"
 
 using namespace std;
@@ -18,36 +19,22 @@ int main() {
     i.push(461);
     i.push(726);
 
-    cout << i.peek() << endl;
+    cout << "Peek: " << i.peek() << endl;
     
     i.pop();
     
-    cout << i << endl;
+    cout << "Stack after pop: " << i << endl;
     
-    
-    
-    cout << i << endl;
-
-    i.rotate(LEFT);
-
     i.clear();
-    i.getLength();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
+    cout << "Stack after clear: " <<  i << endl;
 
     return 0;
 }
+
+/*
+  //  i.rotate(LEFT);
+
+    // i.clear();
+   // cout << "Length after clear: " << i.getLength() << endl;
+*/
