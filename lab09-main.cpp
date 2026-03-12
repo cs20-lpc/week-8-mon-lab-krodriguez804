@@ -20,10 +20,10 @@ int main() {
   cout << a;
 
   if (a.isFull()) {
-    cout << "Stack A is full!";
+    cout << " Stack A is full!"; 
   }
 
-  cout << "Stack A length: " << a.getLength();
+  cout << " Stack A length: " << a.getLength();
   cout << "Stack B length: " << b.getLength();
 
   try {
