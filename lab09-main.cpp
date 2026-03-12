@@ -17,61 +17,61 @@ int main() {
   ArrayStack<int> b(a);   
   ArrayStack<int> c(10);
 
-  cout << a << endl;
+  cout << a;
 
   if (a.isFull()) {
-    cout << "Stack A is full!" << endl;
+    cout << "Stack A is full!";
   }
 
-  cout << "Stack A length: " << a.getLength() << endl;
-  cout << "Stack B length: " << b.getLength() << endl;
+  cout << "Stack A length: " << a.getLength();
+  cout << "Stack B length: " << b.getLength();
 
   try {
     a.push(12);
   }
   catch (string e) {
-    cout << e << endl;
+    cout << e;
   }
 
-  cout << "Popping 9 from stack B" << endl;
+  cout << "Popping 9 from stack B";
   b.pop();
 
-  cout << "Popping 8 from stack B" << endl;
+  cout << "Popping 8 from stack B";
   b.pop();
 
-  cout << "Popping 7 from stack B" << endl;
+  cout << "Popping 7 from stack B";
   b.pop();
 
-  cout << "Popping 6 from stack B" << endl;
+  cout << "Popping 6 from stack B";
   b.pop();
 
-  cout << "Popping 5 from stack B" << endl;
+  cout << "Popping 5 from stack B";
   b.pop();
 
-  cout << "Stack B length: " << b.getLength() << endl;
+  cout << "Stack B length: " << b.getLength();
 
   b.clear();
 
-  cout << "Stack B is now empty after being cleared" << endl;
+  cout << "Stack B is now empty after being cleared";
 
   try {
     b.pop();
   }
   catch (string e) {
-    cout << e << endl;
+    cout << e;
   }
 
   try {
     b.peek();
   }
   catch (string e) {
-    cout << e << endl;
+    cout << e;
   }
 
   c = a;  
 
-  cout << "Stack A length: " << a.getLength() << endl;
-  cout << "Stack C length: " << c.getLength() << endl;
+  cout << "Stack A length: " << a.getLength();
+  cout << "Stack C length: " << c.getLength();
 
   return 0;
 }
