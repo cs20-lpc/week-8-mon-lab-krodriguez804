@@ -131,10 +131,11 @@ void ArrayStack<T>::rotate(typename Stack<T>::Direction dir) {
 
 template <typename T>
 ostream& operator<<(ostream& outStream, const ArrayStack<T>& myObj) {
-
     for (int i = 0; i < myObj.length; i++) {
-        outStream << myObj.buffer[i] << " ";
+        outStream << myObj.buffer[i];
+        if (i != myObj.length - 1) {  // add space only between elements
+            outStream << " ";
+        }
     }
-
     return outStream;
 }
