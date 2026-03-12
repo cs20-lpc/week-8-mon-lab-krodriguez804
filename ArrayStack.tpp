@@ -23,15 +23,13 @@ ArrayStack<T>& ArrayStack<T>::operator=(const ArrayStack<T>& rightObj) {
 template <typename T>
 ArrayStack<T>::~ArrayStack() {
     clear();
+    delete[] buffer;
 }
 
 template <typename T>
 void ArrayStack<T>::clear() {
     // TODO remove all elements in the stack, resetting to the initial state
-    delete[] buffer;
-    buffer = nullptr;
     this->length = 0;
-    maxSize = 0;
 }
 
 template <typename T>
@@ -70,7 +68,7 @@ template <typename T>
 T ArrayStack<T>::peek() const {
     // TODO return the element at the top of the stack
     if (this->length == 0) {
-        throw string("Stack is empty");
+        throw string("peek: error, stack is empty, cannot access the top");
     }
     
     return buffer[this->length - 1];
@@ -80,7 +78,7 @@ template <typename T>
 void ArrayStack<T>::pop() {
     // TODO remove the top element from the stack
     if (this->length == 0) {
-        throw string("Stack is empty");
+        throw string("pop: error, stack is empty, avoiding underflow");
     }
 
     this->length--;
@@ -90,7 +88,7 @@ template <typename T>
 void ArrayStack<T>::push(const T& elem) {
     // TODO add the argument to the top of the stack
     if (this->length >= maxSize) {
-        throw string("Over max size of array");
+        throw string("push: error, stack is full, avoiding overflow");
     }
 
     buffer[this->length] = elem;
@@ -133,14 +131,9 @@ void ArrayStack<T>::rotate(typename Stack<T>::Direction dir) {
 
 template <typename T>
 ostream& operator<<(ostream& outStream, const ArrayStack<T>& myObj) {
-    if (myObj.isEmpty()) {
-        outStream << "Stack is empty, no elements to display.\n";
-    }
-    else {
-        for (int i = myObj.length - 1; i >= 0; i--) {
-            outStream << (i == myObj.length - 1 ? "top\t" : "\t")
-                      << myObj.buffer[i] << endl;
-        }
+
+    for (int i = 0; i < myObj.length; i++) {
+        outStream << myObj.buffer[i] << " ";
     }
 
     return outStream;

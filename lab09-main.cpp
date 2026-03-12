@@ -9,19 +9,13 @@ using namespace std;
 int main() {
 
   ArrayStack<int> a(10);
-  ArrayStack<int> b(a);
-  ArrayStack<int> c(10);
 
-  a.push(0);
-  a.push(1);
-  a.push(2);
-  a.push(3);
-  a.push(4);
-  a.push(5);
-  a.push(6);
-  a.push(7);
-  a.push(8);
-  a.push(9);
+  for(int i = 0; i < 10; i++) {
+    a.push(i);
+  }
+
+  ArrayStack<int> b(a);   
+  ArrayStack<int> c(10);
 
   cout << a << endl;
 
@@ -39,21 +33,21 @@ int main() {
     cout << e << endl;
   }
 
-  b.pop();
   cout << "Popping 9 from stack B" << endl;
+  b.pop();
 
-  b.pop();
   cout << "Popping 8 from stack B" << endl;
-    
   b.pop();
+
   cout << "Popping 7 from stack B" << endl;
-    
   b.pop();
+
   cout << "Popping 6 from stack B" << endl;
-    
   b.pop();
+
   cout << "Popping 5 from stack B" << endl;
-    
+  b.pop();
+
   cout << "Stack B length: " << b.getLength() << endl;
 
   b.clear();
@@ -73,13 +67,11 @@ int main() {
   catch (string e) {
     cout << e << endl;
   }
- 
+
+  c = a;  
+
   cout << "Stack A length: " << a.getLength() << endl;
   cout << "Stack C length: " << c.getLength() << endl;
 
-    return 0;
+  return 0;
 }
-
-/*
-    //  i.rotate(LEFT);
-*/
